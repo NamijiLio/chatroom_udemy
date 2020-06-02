@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>chatroom with nodejs</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="app">
+        <div id="main">
+            <ul id="txt-area">
+                <li>txt1</li>
+                <li class="owner">txt2</li>
+                <li>txt3</li>
+                <li>txt4</li>
+            </ul>
+            <ul id="onlines">
+                <li><a href="">user 1</a></li>
+                <li><a href="">user2</a></li>
+                <li><a href="">user3</a></li>
+                <li><a href="">user4</a></li>
+            </ul>
+        </div>
+        <textarea placeholder="type your message and press enter" id="txt" rows="5" v-model="text" @keyup.enter="send()"></textarea>
+
+    </div>
+
+    <script src="vue.min.js"></script>
+    <script src="http://localhost:9090/socket.io/socket.io.js"></script>
+    <script src="chatroom.js"></script>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+               text:''                 
+            },methods:{
+                send: function() {
+                    console.log('send message',this.text.trim());
+                    socket.emit('newMsg',this.text.trim());
+                    this.text='';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
