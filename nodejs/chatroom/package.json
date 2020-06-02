@@ -1,0 +1,18 @@
+{
+ "name": "chatrooms-js",
+ "version":"1.0.0",
+ "description": "this is my chatroom",
+ "main": "chat.js",
+ "scripts": {
+     "test": "echo \"Error:no test specified\" && exit 1"
+ },
+ "keywords": [
+  "chat",
+  "chatroom",
+  "nodejs",
+  "socket.io"
+ ],
+ "author": "A1Gard" ,
+ "license": "ISC"
+}
+

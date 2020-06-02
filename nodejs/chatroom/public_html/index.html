@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>chatroom with nodejs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app">
+        <pre id="txt-area">chat:</pre>
+        <textarea id="txt" rows="5" v-model="text" ></textarea>
+
+    </div>
+
+    <script src="vue.min.js"></script>
+    <script src="http://localhost:9090/socket.io/socket.io.js"></script>
+    <script src="chatroom.js"></script>
+    <script>
+        new Vue({
+            el: '#app', 
+            data:{
+                text:'false'
+            },methods: {
+                send:function() {
+                    console.log('send');
+                }
+            },
+        });
+    </script>
+</body>
+</html>
